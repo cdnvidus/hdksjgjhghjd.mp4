@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nothing but chill vibes with Auntie right by my side</title>
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+body{
+  font-family:Arial,sans-serif;
+  background:
+  radial-gradient(circle,#4b0025 0%,#12000a 35%,#000 100%);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  min-height:100vh;
+}
+
+/* CARD */
+.container{
+    width:92%;
+    max-width:430px;
+
+    padding:15px;
+
+    background:#fff;
+
+    border-radius:32px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    text-align:center;
+
+    box-shadow:
+      0 0 30px rgba(255,255,255,.8),
+      0 0 60px rgba(255,0,128,.6),
+      0 0 120px rgba(255,0,128,.35);
+}
+
+.container::before{
+    display:none;
+}
+
+/* TITLE */
+.title{
+    color:#111;
+    font-size:24px;
+    font-weight:800;
+    font-family:'Outfit',sans-serif;
+    margin-bottom:25px;
+}
+
+/* BUTTON BASE */
+.elite-btn{
+    position:relative;
+    width:100%;
+    height:68px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    margin:20px 0;
+
+    text-decoration:none;
+    overflow:hidden;
+
+    border-radius:18px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #0a0a0a,
+        #1b1b1b,
+        #0a0a0a
+    );
+
+    border:2px solid #ffd700;
+
+    box-shadow:
+        0 0 12px rgba(255,215,0,.4),
+        inset 0 0 12px rgba(255,215,0,.1);
+
+    color:#ffffff;
+    font-size:18px;
+    font-weight:700;
+    letter-spacing:1.5px;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.6),
+        0 0 20px rgba(255,215,0,.12);
+
+    transition:.4s ease;
+}
+
+.elite-btn::before{
+    content:"";
+    position:absolute;
+    inset:-2px;
+
+    background:
+    linear-gradient(
+        90deg,
+        transparent,
+        #ffd700,
+        #fff,
+        #ffd700,
+        transparent
+    );
+
+    background-size:300% 100%;
+
+    border-radius:20px;
+
+    animation:borderFlow 4s linear infinite;
+
+    z-index:0;
+}
+
+.elite-btn::after{
+    content:"";
+    position:absolute;
+    inset:2px;
+
+    background:
+    linear-gradient(
+        180deg,
+        #1a1a1a,
+        #090909
+    );
+
+    border-radius:16px;
+
+    z-index:1;
+}
+
+.elite-btn span{
+    position:relative;
+    z-index:2;
+
+    text-shadow:
+        0 0 10px rgba(255,255,255,.15);
+}
+
+.elite-btn span::before{
+    content:"";
+    position:absolute;
+    top:-25px;
+    left:-120px;
+
+    width:40px;
+    height:120px;
+
+    background:rgba(255,255,255,.4);
+
+    transform:rotate(25deg);
+
+    filter:blur(8px);
+
+    animation:shine 3s infinite;
+}
+
+.elite-btn:hover{
+    transform:translateY(-4px);
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.8),
+        0 0 35px rgba(255,215,0,.25);
+}
+
+@keyframes borderFlow{
+    0%{
+        background-position:0% 50%;
+    }
+    100%{
+        background-position:300% 50%;
+    }
+}
+
+@keyframes shine{
+    0%{
+        left:-120px;
+    }
+    100%{
+        left:350px;
+    }
+}
+
+.divider{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:15px;
+    margin-bottom:30px;
+}
+
+.divider span{
+    width:110px;
+    height:1px;
+    background:#d4af37;
+}
+
+.dot{
+    width:14px;
+    height:14px;
+    border-radius:50%;
+    background:#d4af37;
+    box-shadow:0 0 15px rgba(212,175,55,.8);
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+	<div class="title"> Video streaming Online </div>
+
+    <!-- DESCRIPTION -->
+    <div class="desc">
+    Fast and simple video streaming experience , try another available link below 👇
+	</div>
+
+  <a id="btn1" class="random-btn" href="#" target="_blank" rel="noopener noreferrer">
+    ▶ Watch Video
+  </a>
+
+  <a id="btn2" class="random-btn" href="#" target="_blank" rel="noopener noreferrer">
+    ▶ Part 2
+  </a>
+
+  <a id="btn3" class="random-btn" href="#" target="_blank" rel="noopener noreferrer">
+    ▶ Alternative Link
+  </a>
+
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const links = [
+    "https://t.co/W8TaBvZkd4",
+    "https://t.co/FgNkg47vhq",
+    "https://vidstarz.github.io/dslkjfhdjfhgjgdf.mp4/"
+  ];
+
+  // Acak link setiap refresh
+  for (let i = links.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [links[i], links[j]] = [links[j], links[i]];
+  }
+
+  // Berikan link acak ke tombol
+  document.getElementById("btn1").href = links[0];
+  document.getElementById("btn2").href = links[1];
+  document.getElementById("btn3").href = links[2];
+});
+</script>
+
+<style>
+.random-box {
+  max-width: 400px;
+  margin: 25px auto;
+  padding: 18px;
+  border: 2px solid #ddd;
+  border-radius: 15px;
+  background: #fff;
+}
+
+.random-btn {
+  display: block;
+  margin: 10px 0;
+  padding: 14px;
+  text-align: center;
+  text-decoration: none;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background: #222;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+}
+
+.random-btn:hover {
+  opacity: 0.85;
+}
+</style>
+
+<!-- Histats.com  START  (aync)-->
+<script type="text/javascript">var _Hasync= _Hasync|| [];
+_Hasync.push(['Histats.start', '1,4989715,4,0,0,0,00010000']);
+_Hasync.push(['Histats.fasi', '1']);
+_Hasync.push(['Histats.track_hits', '']);
+(function() {
+var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
+hs.src = ('//s10.histats.com/js15_as.js');
+(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
+})();</script>
+<noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?4989715&101" alt="free hit counter code" border="0"></a></noscript>
+<!-- Histats.com  END  -->
